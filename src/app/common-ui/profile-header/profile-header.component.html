@@ -1,0 +1,15 @@
+@if (profile(); as profile) {
+    <!-- Добавил контейнер сам, т.к. идет перенос строки -->
+    <div class="profile-header__container">
+        @if (profile.avatarUrl) {
+            <img [src]="profile.avatarUrl | imgUrl" alt="">
+        } @else {
+            <img src="/assets/imgs/avatar-placeholder.png" alt="">
+        }
+
+        <div class="username-and-name">
+            <h1 class="h4 mb4">{{ profile.firstName }} {{ profile.lastName }}</h1>
+            <span class="regular">{{ profile.username }}</span>
+        </div>
+    </div>
+}
